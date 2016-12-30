@@ -5,7 +5,7 @@
 ![minSdkVersion](https://img.shields.io/badge/minSdkVersion-19-yellow.svg?style=true)
 ![compileSdkVersion](https://img.shields.io/badge/compileSdkVersion-25-green.svg?style=true)
 
-Android example app to show how to use a [BroadcastReceiver](https://developer.android.com/reference/android/content/BroadcastReceiver.html) to listen for incoming **SMS** and sending inside the APP. Useful dealing with SMS-based services. 
+Android example app to show how to use a [BroadcastReceiver](https://developer.android.com/reference/android/content/BroadcastReceiver.html) to listen for incoming **SMS** and sending inside the APP, especially useful dealing with SMS-based services. 
 
 ## Contributing
 
