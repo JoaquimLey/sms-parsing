@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SmsParsing</string>
+
+    <string name="action_ok">OK</string>
+    <string name="action_send_normal_sms">Send normal SMS</string>
+    <string name="action_send_condition_sms">Send Condition SMS</string>
+
+    <string name="your_cellphone_number">Your cellphone number:</string>
+    <string name="phone_number_hint">912345678</string>
+    <string name="toast_sending_sms">Sending sms…</string>
+
+    <string name="permission_alert_dialog_title">Requesting SMS permission</string>
+    <string name="permission_dialog_message">The app will now request your permission to send and read SMS related services.</string>
+
+    <string name="error_invalid_phone_number">Invalid phone number</string>
+</resources>
