@@ -1,11 +1,13 @@
 ![AppIcon](../master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png) 
 
-#SMS Parsing
+# SMS Parsing
 
 ![minSdkVersion](https://img.shields.io/badge/minSdkVersion-19-yellow.svg?style=true)
 ![compileSdkVersion](https://img.shields.io/badge/compileSdkVersion-25-green.svg?style=true)
 
 Android example app to show how to use a [BroadcastReceiver](https://developer.android.com/reference/android/content/BroadcastReceiver.html) to listen for incoming **SMS** and sending inside the APP, especially useful dealing with SMS-based services. 
+
+### Read more in the blog post: [Medium](https://medium.com/@JoaquimLey/detecting-sending-sms-on-android-8a154562597f)
 
 ## Contributing
 
