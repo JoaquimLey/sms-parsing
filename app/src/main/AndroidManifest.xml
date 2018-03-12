@@ -3,9 +3,8 @@
     package="com.joaquimley.smsparsing">
 
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_SMS" />w
+    <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-w
 
     <application
         android:allowBackup="true"
@@ -21,7 +20,6 @@ w
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
 
         <receiver
             android:name=".SmsBroadcastReceiver"
