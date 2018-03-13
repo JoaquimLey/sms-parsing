@@ -122,7 +122,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     private boolean hasReadSmsPermission() {
         return ContextCompat.checkSelfPermission(MainActivity.this,
-                Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED;
+                Manifest.permission.READ_SMS) == PackageManager.PERMISSION_GRANTED &&
+                ContextCompat.checkSelfPermission(MainActivity.this,
+                        Manifest.permission.RECEIVE_SMS) == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestReadAndSendSmsPermission() {
@@ -130,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.d(TAG, "shouldShowRequestPermissionRationale(), no permission requested");
             return;
         }
-        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_SMS},
+        ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.READ_SMS, Manifest.permission.RECEIVE_SMS},
                 SMS_PERMISSION_CODE);
     }
 }
