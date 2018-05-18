@@ -7,6 +7,12 @@
 
 Android example app to show how to use a [BroadcastReceiver](https://developer.android.com/reference/android/content/BroadcastReceiver.html) to listen for incoming **SMS** and sending inside the APP, especially useful dealing with SMS-based services. 
 
+## This is a bare bones repo, if you wish to see an actual implementation
+
+- Check this repository: [JoaquimLey/transport-eta](https://github.com/JoaquimLey/transport-eta)
+
+--------------------
+
 ### Read more in the blog post: [Medium](https://medium.com/@JoaquimLey/detecting-sending-sms-on-android-8a154562597f)
 
 ## Contributing
