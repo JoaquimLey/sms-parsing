@@ -21,8 +21,8 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
 			String smsSender = "";
 			String smsBody = "";
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                                smsSender = smsMessage.getDisplayOriginatingAddress();
 				for (SmsMessage smsMessage : Telephony.Sms.Intents.getMessagesFromIntent(intent)) {
-					smsSender = smsMessage.getDisplayOriginatingAddress();
 					smsBody += smsMessage.getMessageBody();
 				}
 			} else {
