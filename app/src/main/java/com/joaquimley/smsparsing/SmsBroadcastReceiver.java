@@ -6,23 +6,36 @@ import android.content.Intent;
 import android.provider.Telephony;
 import android.telephony.SmsMessage;
 import android.util.Log;
-import android.widget.Toast;
+import android.os.Build;
+import android.os.Bundle;
+
 
 /**
  * A broadcast receiver who listens for incoming SMS
  */
+
 public class SmsBroadcastReceiver extends BroadcastReceiver {
 
-    private static final String TAG = "SmsBroadcastReceiver";
+	private static final String TAG = "SmsBroadcastReceiver";
 
-    @Override
+	private final String serviceProviderNumber;
+	private final String serviceProviderSmsCondition;
+
+	private Listener listener;
+
+	public SmsBroadcastReceiver(String serviceProviderNumber, String serviceProviderSmsCondition) {
+		this.serviceProviderNumber = serviceProviderNumber;
+		this.serviceProviderSmsCondition = serviceProviderSmsCondition;
+	}
+
+	@Override
 	public void onReceive(Context context, Intent intent) {
 		if (intent.getAction().equals(Telephony.Sms.Intents.SMS_RECEIVED_ACTION)) {
 			String smsSender = "";
 			String smsBody = "";
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                                smsSender = smsMessage.getDisplayOriginatingAddress();
 				for (SmsMessage smsMessage : Telephony.Sms.Intents.getMessagesFromIntent(intent)) {
+					smsSender = smsMessage.getDisplayOriginatingAddress();
 					smsBody += smsMessage.getMessageBody();
 				}
 			} else {
@@ -43,11 +56,19 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
 				}
 			}
 
-			if (smsSender.equals(SmsHelper.SERVICE_PROVIDER) && smsBody.startsWith(SmsHelper.SMS_CONDITION)) {
+			if (smsSender.equals(serviceProviderNumber) && smsBody.startsWith(serviceProviderSmsCondition)) {
 				if (listener != null) {
 					listener.onTextReceived(smsBody);
 				}
 			}
 		}
+	}
+
+	void setListener(Listener listener) {
+		this.listener = listener;
+	}
+
+	interface Listener {
+		void onTextReceived(String text);
 	}
 }
